@@ -1,0 +1,29 @@
+config:
+  # 日本語ドキュメントでは行長制限は実用的でない
+  MD013: false
+  # ASCII art や設定例で言語指定なしを許容
+  MD040: false
+  # テーブルの compact 形式 (`|---|---|`) を許容
+  MD060: false
+  # 同一見出しの重複 (Why や Test Plan が複数 PR テンプレ的に登場) を許容
+  MD024: false
+  # ファイル先頭の見出し位置の柔軟性
+  MD041: false
+  # bare URL 許容 (PR / Issue 等の説明での URL 直書き)
+  MD034: false
+  # 行末空白 (日本語の読点後の改行調整等で混在しがち)
+  MD009: false
+  # heading 前後の空行
+  MD022: false
+  # 番号リストの番号スタイル (1. 1. 1. 等を許容)
+  MD029: false
+  # fenced code block 前後の空行
+  MD031: false
+  # list 前後の空行
+  MD032: false
+  # bold を heading 代わりに使う (**強調** 一行を見出しとして) を許容
+  MD036: false
+globs:
+  - "**/*.md"
+ignores:
+  - "node_modules/**"
