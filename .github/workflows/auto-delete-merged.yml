@@ -9,13 +9,13 @@ jobs:
     if: github.event.pull_request.merged == true && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v9
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           script: |
             const branch = context.payload.pull_request.head.ref;
-            const protectedBranches = ['main', 'master', 'develop'];
+            const protectedBranches = ["main", "master", "develop"];
             if (protectedBranches.includes(branch)) return;
-            if (branch.startsWith('dependabot/')) return;
+            if (branch.startsWith("dependabot/")) return;
             try {
               await github.rest.git.deleteRef({
                 owner: context.repo.owner,
